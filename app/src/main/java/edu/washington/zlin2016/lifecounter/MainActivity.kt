@@ -44,7 +44,7 @@ class MainActivity : AppCompatActivity() {
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
         playerSelector!!.setAdapter(adapter)
         playerSelector.onItemSelectedListener = object: AdapterView.OnItemSelectedListener {
-            override fun onItemSelected(arg0: AdapterView<*>, arg1: View, position: Int, id: Long) {
+            override fun onItemSelected(parent: AdapterView<*>, view: View?, position: Int, id: Long) {
                 selectedPlayer = position
             }
             override fun onNothingSelected(parent: AdapterView<*>) {

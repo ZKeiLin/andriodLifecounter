@@ -5,6 +5,8 @@
     <string name="plus1">+</string>
     <string name="minus">-</string>
     <string name="minus5">-5</string>
-    <string name="player1">Player 1</string>
     <string name="player_1">Player 1</string>
+    <string name="player_2">Player 2</string>
+    <string name="player_3">Player 3</string>
+    <string name="player_4">Player 4</string>
 </resources>
