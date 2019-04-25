@@ -5,6 +5,9 @@ import android.os.Bundle
 import android.widget.*
 import android.view.View
 import android.widget.TextView
+import android.os.Handler
+
+
 
 
 class MainActivity : AppCompatActivity() {
@@ -37,7 +40,7 @@ class MainActivity : AppCompatActivity() {
             button.setOnClickListener{onClick(button, lives)}
         }
 
-        // set up spinner
+        // Spinner
         val playersOptions = arrayOf("Player 1", "Player 2", "Player 3", "Player 4")
         val playerSelector = findViewById<Spinner>(R.id.playerSelector)
         val adapter = ArrayAdapter(this, android.R.layout.simple_spinner_item, playersOptions)
@@ -62,10 +65,16 @@ class MainActivity : AppCompatActivity() {
             else -> playerScore[selectedPlayer] -= 0;
         }
          lives[selectedPlayer].text = playerScore[selectedPlayer].toString()
+
+         
          if(playerScore[selectedPlayer] <= 0){
-             Toast.makeText(applicationContext, "Player"+(selectedPlayer+1)+" LOSES!", Toast.LENGTH_LONG).show()
-             finish()
-             startActivity(getIntent())
+             val lose = findViewById<TextView>(R.id.loseLabel)
+             lose.text = "Player "+(selectedPlayer+1)+" LOSES!"
+             lose.visibility = View.VISIBLE
+             Handler().postDelayed(({
+                 finish()
+                 startActivity(getIntent())
+             }), 2000)
          }
     }
 }
