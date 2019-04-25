@@ -10,22 +10,24 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/instruction" app:layout_constraintTop_toTopOf="parent"
-            android:layout_marginTop="71dp"
+            android:layout_marginTop="10dp"
             android:layout_marginBottom="16dp" app:layout_constraintBottom_toTopOf="@+id/linearLayout"
             app:layout_constraintStart_toStartOf="parent" app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintEnd_toEndOf="parent" android:text="@string/instruction" android:textSize="20sp"
             android:textAlignment="viewStart"/>
     <TableLayout
             android:layout_width="369dp"
-            android:layout_height="465dp"
+            android:layout_height="wrap_content"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent" android:layout_marginTop="15dp"
-            app:layout_constraintTop_toBottomOf="@+id/linearLayout" android:id="@+id/table">
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/linearLayout" android:id="@+id/table"
+            android:layout_marginTop="40dp">
         <TableRow
                 android:layout_width="match_parent"
-                android:layout_height="match_parent" android:id="@+id/player_1" android:gravity="center">
+                android:layout_height="match_parent" android:id="@+id/player_1" android:gravity="center"
+                android:layout_marginBottom="20dp">
             <TextView
-                    android:text="TextView"
+                    android:text="Player 1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:id="@+id/player1"
@@ -42,9 +44,9 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:id="@+id/player_2"
-                android:gravity="center">
+                android:gravity="center" android:layout_marginBottom="20dp">
             <TextView
-                    android:text="TextView"
+                    android:text="Player 2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:id="@+id/player2"
@@ -61,9 +63,9 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:id="@+id/player_3"
-                android:gravity="center">
+                android:gravity="center" android:layout_marginBottom="20dp">
             <TextView
-                    android:text="TextView"
+                    android:text="Player 3"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:id="@+id/player3"
@@ -81,7 +83,7 @@
                 android:layout_height="match_parent"
                 android:id="@+id/player_4" android:gravity="center">
             <TextView
-                    android:text="TextView"
+                    android:text="Player 4"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:id="@+id/player4"
@@ -98,48 +100,53 @@
             android:orientation="horizontal"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" app:layout_constraintGuide_begin="50dp" android:id="@+id/guideline"/>
+    <Spinner
+            android:id="@+id/playerSelector"
+            android:spinnerMode="dropdown"
+            android:layout_width="0dp" android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5" android:layout_marginTop="50dp"
+            app:layout_constraintTop_toBottomOf="@+id/instruction" android:layout_marginStart="50dp"
+            android:layout_marginEnd="50dp"/>
     <LinearLayout
             android:orientation="horizontal"
             android:layout_width="392dp"
             android:layout_height="60dp"
             app:layout_constraintEnd_toEndOf="parent"
             android:layout_marginEnd="8dp" android:gravity="center" android:clipToPadding="false"
-            app:layout_constraintStart_toStartOf="parent" app:layout_constraintHorizontal_bias="0.5"
-            android:id="@+id/linearLayout" android:layout_marginTop="106dp" app:layout_constraintTop_toTopOf="parent">
-        <Spinner
-                android:layout_height="match_parent" tools:layout_editor_absoluteY="71dp"
-                tools:layout_editor_absoluteX="11dp" android:id="@+id/playerSelector" android:layout_marginEnd="10dp"
-                android:spinnerMode="dropdown"
-                android:layout_width="160dp"/>
+            app:layout_constraintStart_toStartOf="parent" app:layout_constraintHorizontal_bias="0.818"
+            android:id="@+id/linearLayout" android:layout_marginTop="20dp"
+            app:layout_constraintTop_toBottomOf="@+id/playerSelector">
         <Button
                 android:text="@string/puls5"
-                android:layout_width="50dp"
+                android:layout_width="57dp"
                 tools:layout_editor_absoluteY="43dp"
                 tools:layout_editor_absoluteX="33dp" android:id="@+id/plus5"
                 android:textAlignment="center"
                 style="@style/Widget.AppCompat.Button.Colored" android:textColor="@android:color/white"
-                android:textSize="20sp" android:layout_marginEnd="10dp" android:layout_height="50dp"/>
+                android:textSize="20sp" android:layout_marginEnd="10dp" android:layout_height="57dp"/>
         <Button
                 android:text="@string/plus1"
-                android:layout_width="50dp"
+                android:layout_width="57dp"
                 tools:layout_editor_absoluteY="50dp"
-                tools:layout_editor_absoluteX="116dp" android:id="@+id/plus" android:layout_height="50dp"
+                tools:layout_editor_absoluteX="116dp" android:id="@+id/plus" android:layout_height="57dp"
                 android:textAlignment="center"
                 style="@style/Widget.AppCompat.Button.Colored" android:textColor="@android:color/white"
                 android:textSize="20sp" android:layout_marginEnd="10dp"/>
         <Button
                 android:text="@string/minus"
-                android:layout_width="50dp"
+                android:layout_width="57dp"
                 tools:layout_editor_absoluteY="50dp"
-                tools:layout_editor_absoluteX="304dp" android:id="@+id/minus" android:layout_height="50dp"
+                tools:layout_editor_absoluteX="304dp" android:id="@+id/minus" android:layout_height="57dp"
                 android:textAlignment="center"
                 style="@style/Widget.AppCompat.Button.Colored" android:textColor="@android:color/white"
                 android:textSize="20sp" android:layout_marginEnd="10dp"/>
         <Button
                 android:text="@string/minus5"
-                android:layout_width="50dp"
+                android:layout_width="57dp"
                 tools:layout_editor_absoluteY="50dp"
-                tools:layout_editor_absoluteX="203dp" android:id="@+id/minus5" android:layout_height="50dp"
+                tools:layout_editor_absoluteX="203dp" android:id="@+id/minus5" android:layout_height="57dp"
                 android:textAlignment="center" style="@style/Widget.AppCompat.Button.Colored"
                 android:textColor="@android:color/white" android:textSize="20sp"/>
     </LinearLayout>
